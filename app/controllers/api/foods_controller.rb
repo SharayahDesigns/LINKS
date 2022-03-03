@@ -6,10 +6,10 @@ class Api::FoodsController < ApplicationController
 
 def show
         # find the link in the db  with the id in the url  
-        link = Link.find(params[:id])
-        #return data
-       render json: link
+        # link = Link.find(params[:id])
+        #r params[:id] will be the id give in the url by the client
+       food = Food.find(params[:id]) 
+       render json: food
     end
 end
  
-#Hope 

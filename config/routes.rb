@@ -31,7 +31,7 @@ delete 'links/:id', to: 'links#destroy'
 #prepend everything with api
 namespace :api do
 get 'foods', to: 'foods#index' # returns all foods from db
-get 'foods', to: 'foods#show'
+get 'foods/:id', to: 'foods#show' # return food from db match :id passed
 end
 
 
