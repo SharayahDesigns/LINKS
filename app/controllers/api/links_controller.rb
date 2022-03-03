@@ -3,14 +3,12 @@ class Api::LinksController < ApplicationController
     # get 'api/links'
     def index
       # get all links from db
-      links = Link.all
-      
-      #return data
-      render json: links 
+      # links = Link.all
+      # #return data
+      render json: Link.all
     end
-
-    # return 1 link
-    # get 'api/links/:id'
+#     # return 1 link
+#     # get 'api/links/:id'
     def show
         # find the link in the db  with the id in the url  
         link = Link.find(params[:id])
@@ -34,8 +32,8 @@ class Api::LinksController < ApplicationController
        end
     end
 
-     # try to update a link to db
-     # put/patch 'api/links/:id', link: {title, url, username, description}
+#      # try to update a link to db
+#      # put/patch 'api/links/:id', link: {title, url, username, description}
     def update
         # find the link in the db  with the id in the url   
         link = Link.find(params[:id])
@@ -49,8 +47,8 @@ class Api::LinksController < ApplicationController
         end
      end
 
-    # delete a link to db
-    # delete 'api/links/:id'
+#     # delete a link to db
+#     # delete 'api/links/:id'
     def destroy
       # find the link in the db  with the id in the url   
       link = Link.find(params[:id])
@@ -66,4 +64,3 @@ class Api::LinksController < ApplicationController
         params.require(:link).permit(:title, :url, :username, :description)
     end
 end
-
