@@ -11,5 +11,22 @@ def show
        food = Food.find(params[:id]) 
        render json: food
     end
-end
+
  
+def create
+    food = Food.new(food_params)
+    if(food.save)
+        render json: food
+  else
+        render json: {errors: food.errors.full_messages}, status: 422
+      end
+    end
+
+private
+# checks and only return {name, price}
+def food_params
+    params.require(:food).permit(:name, :price)
+    end
+
+
+end

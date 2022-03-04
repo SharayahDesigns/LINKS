@@ -32,6 +32,7 @@ delete 'links/:id', to: 'links#destroy'
 namespace :api do
 get 'foods', to: 'foods#index' # returns all foods from db
 get 'foods/:id', to: 'foods#show' # return food from db match :id passed
+post 'foods', to: 'foods#create'
 end
 
 
